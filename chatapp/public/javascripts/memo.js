@@ -16,6 +16,8 @@ function memo() {
     if (nokaigyoumessage !== ""){
         // メモの内容を表示
         $('#thread').prepend('<p>' + userName + 'さんのメモ : ' + message + '</p>');
+        // テキストボックスの初期化
+        $('#message').val('')
     }
     else {
         alert("投稿文を入力してください");
