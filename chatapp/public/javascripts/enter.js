@@ -2,11 +2,13 @@
 
 // 入室メッセージをサーバに送信する
 function enter() {
-// 入力されたユーザ名を取得する
+    // 入力されたユーザ名を取得する
     const userName = $('#userName').text();
-// 入室メッセージイベントを送信する
-    if (userName != '') {
+    // 入室メッセージイベントを送信する
+    if (userName !== '') {
         socket.emit('sendMyNameEvent', userName);
+    } else if (userName === '') {
+        window.alert('ユーザー名を入力してください！');
     }
 
 }
@@ -14,6 +16,6 @@ function enter() {
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('recieveMyNameEvent', function (data) {
     console.log(data);
-    $('#thread').prepend('<p>' + data + '</p>');
+    $('#thread').append('<p>' + data + '</p>');
     $('#userName').val(data);
 });
