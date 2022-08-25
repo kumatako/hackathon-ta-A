@@ -6,6 +6,6 @@ module.exports = function (socket) {
         if (!data) {
             return
         }
-        io.socket.emit('recieveExitEvent', data);
+        socket.broadcast.emit('recieveExitEvent', data + 'さんが退出しました。');
     });
 };
