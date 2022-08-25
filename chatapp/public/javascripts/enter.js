@@ -3,7 +3,7 @@
 // 入室メッセージをサーバに送信する
 function enter() {
     // 入力されたユーザ名を取得する
-    const userName = $('#userName').text();
+    const userName = $('#userName').val();
     // 入室メッセージイベントを送信する
     if (userName !== '') {
         socket.emit('sendMyNameEvent', userName);
