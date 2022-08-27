@@ -1,9 +1,13 @@
 'use strict';
 
+
 // メモを画面上に表示する
 function memo() {
-    // ユーザ名を取得
+
+
+    //ユーザ名を取得
     const userName = $('#userName').val();
+    
     // 入力されたメッセージを取得
     const message = $('#message').val();
     //メッセージのスペースを除去
@@ -21,7 +25,7 @@ function memo() {
         // メモの内容を表示
         $('#thread').prepend('<p>' + userName + 'さんのメモ : ' + message + '</p>');
         // テキストボックスの初期化
-        $('#message').val('')
+        $('#message').val('');
     }
     else {
         alert("投稿文を入力してください");
