@@ -23,7 +23,7 @@ function memo() {
     //メッセージが空でないか判別
     if (nokaigyoumessage !== ""){
         // メモの内容を表示
-        $('#thread').prepend('<p>' + userName + 'さんのメモ : ' + message + '</p>');
+        $('#thread').prepend('<p>' + userName + 'さんのメモ : ' + message +'</p>');
         // テキストボックスの初期化
         $('#message').val('');
     }
