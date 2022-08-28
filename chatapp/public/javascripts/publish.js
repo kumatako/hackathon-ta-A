@@ -9,7 +9,8 @@ function publish() {
     // 投稿内容を送信
     // sendMessageEvent
     socket.emit('sendMessageEvent',message);
-
+    $('#message').val('');
+    
     return false;
 }
 
