@@ -7,7 +7,7 @@ module.exports = function (socket, io) {
     // ソケットから投稿を受信
     // receiveMessageEvent
     // 全部のソケットに送信する
-    socket.on('sendMessageEvent', function (data) {
-        io.sockets.emit('receiveMessageEvent',data);
+    socket.on('sendMessageEvent', function (message,userName) {
+        io.sockets.emit('receiveMessageEvent',message,userName);
     });
 };
