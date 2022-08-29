@@ -8,6 +8,12 @@ module.exports = function (socket, io) {
     // receiveMessageEvent
     // 全部のソケットに送信する
     socket.on('sendMessageEvent', function (message,userName) {
-        io.sockets.emit('receiveMessageEvent',message,userName);
+        
+    //時刻の取得
+    require('date-utils');
+    let dt = new Date();
+    let formatted = dt.toFormat("YYYY/MM/DD HH24時MI分SS秒");
+
+        io.sockets.emit('receiveMessageEvent',message,userName,formatted);
     });
 };

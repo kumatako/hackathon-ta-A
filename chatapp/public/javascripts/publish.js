@@ -15,12 +15,12 @@ function publish() {
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
-socket.on('receiveMessageEvent', function (message,userName) {
+socket.on('receiveMessageEvent', function (message,userName,formatted) {
     
     const myUserName = $('#userName').val();
     if(myUserName === userName){
-        $('#thread').prepend('<p>私の投稿：' + message + '</p>');
+        $('#thread').prepend('<p>私の投稿：' + message + '<' + formatted + '>' + '</p>');
     }else{
-        $('#thread').prepend('<p>' +userName+'さんの投稿：'+ message + '</p>');
+        $('#thread').prepend('<p>' +userName+'さんの投稿：'+ message + '<' + formatted + '>' + '</p>');
     }
 });

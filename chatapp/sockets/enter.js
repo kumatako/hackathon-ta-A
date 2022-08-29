@@ -6,6 +6,11 @@ module.exports = function (socket) {
         if (!data) {
             return
         }
-        socket.broadcast.emit('recieveMyNameEvent', data + 'さんが入室しました。');
+        //時刻の取得
+        require('date-utils');
+        let dt = new Date();
+        let formatted = dt.toFormat("YYYY/MM/DD HH24時MI分SS秒");
+
+        socket.broadcast.emit('recieveMyNameEvent', data + 'さんが入室しました。' + '<' + formatted + '>');
     });
 };
