@@ -18,7 +18,7 @@ function publish() {
     //メッセージが空でないかの判別
     if (nokaigyoumessage !== "") {
         // sendMessageEvent
-        socket.emit('sendMessageEvent',message,userName);
+        socket.emit('sendMessageEvent', message, userName);
         $('#message').val('');
     }
 
@@ -26,17 +26,25 @@ function publish() {
         alert("投稿文を入力してください");
     }
 
-    
+
     return false;
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
-socket.on('receiveMessageEvent', function (message,userName,formatted) {
-    
+socket.on('receiveMessageEvent', function (message, userName, formatted) {
+
     const myUserName = $('#userName').val();
-    if(myUserName === userName){
+    if (myUserName === userName) {
         $('#thread').prepend('<p>私の投稿：' + message + '<' + formatted + '>' + '</p>');
-    }else{
-        $('#thread').prepend('<p>' +userName+'さんの投稿：'+ message + '<' + formatted + '>' + '</p>');
+    } else {
+        $('#thread').prepend('<p>' + userName + 'さんの投稿：' + message + '<' + formatted + '>' + '</p>');
     }
 });
+
+
+
+$('#message').keydown(function (event) {
+    if (event.ctrlKey && event.keyCode === 13) {
+        publish()
+    }
+})
