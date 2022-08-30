@@ -15,10 +15,6 @@ function memo() {
     //メッセージの改行を除去
     const nokaigyoumessage = nospacemessage.replace(/\n+/g, "");
 
-    /*//時間の取得
-    require('date-utils');
-    let dt = new Date();
-    let formatted = dt.toFormat("YYYY/MM/DD HH24時MI分SS秒");*/
     
     //メッセージが空でないか判別
     if (nokaigyoumessage !== ""){
