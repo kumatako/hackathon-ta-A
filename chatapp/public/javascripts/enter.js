@@ -9,8 +9,10 @@ if (userName !== '') {
 }
 
 
+
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('recieveMyNameEvent', function (data) {
     console.log(data);
-    $('#thread').prepend('<p>' + data + '</p>');
+
+    $('#thread').prepend('<p>' + data + "さんが入室しました。"  + '</p>');
 });

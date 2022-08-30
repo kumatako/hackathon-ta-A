@@ -6,6 +6,10 @@ module.exports = function (socket) {
         if (!data) {
             return
         }
+
+        if (data !== '') {
+            io.socket.emit('recieveMyNameEvent', data);
+        }
         //時刻の取得
         require('date-utils');
         let dt = new Date();
