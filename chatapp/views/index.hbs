@@ -1,12 +1,26 @@
-<div class="container">
+<div class="container"
+    style="background-color: red;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            height: 100%;
+            width: 100%;">
     <div class="row">
         <h1>Node Chat サンプル</h1>
     </div>
     <div class="row">
-        <form method="post" action="/room">
+        <form method="post" 
+            action="/room">
             <div class="index-user_name">
-                ユーザ名
-                <input type="text" id="userName" name="userName" class="index-user_name_text">
+                <input type="text" 
+                        id="userName" 
+                        name="userName" 
+                        class="index-user_name_text"
+                        placeholder="ユーザー名"
+                        style="height: 60px;
+                            width: 500px;
+                            border-radius: 10px;
+                            border: none;">
             </div>
             <div class="index-icon">
                 <p>アイコンを選択してください</p>
@@ -25,7 +39,15 @@
             </div>
 
             <div class="index-enter">
-                <input type="button" value="入室する" class="common-button index-enter_button" onclick="enter();">
+                <input type="button"
+                        value="入室する" 
+                        class="common-button index-enter_button" 
+                        onclick="enter();"
+                        style="height: 60px;
+                                width: 500px;
+                                margin-top: 30px;
+                                border-radius: 10px;
+                                border: none;">
             </div>
         </form>
     </div>
