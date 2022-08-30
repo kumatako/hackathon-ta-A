@@ -14,5 +14,5 @@ if (userName !== '') {
 socket.on('recieveMyNameEvent', function (data) {
     console.log(data);
 
-    $('#thread').prepend('<p>' + data + "さんが入室しました。"  + '</p>');
+    $('#thread').prepend('<p>' + data + '</p>');
 });
