@@ -2,15 +2,15 @@
  * 画面全体に関する設定
  */
 body {
-    font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif;
+    /* font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif; */
 }
 
 a {
-    color: #00B7FF;
+    /* color: #00B7FF; */
 }
 
 .row {
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 /*
@@ -28,7 +28,7 @@ a {
 }
 
 .index-user_name_text {
-    width: 200px;
+    /* width: 200px; */
 }
 
 .index-enter {
@@ -51,7 +51,7 @@ a {
 }
 
 .room-message_textarea {
-    width: 500px;
+    /* width: 500px; */
 }
 
 .room-submit {
@@ -77,3 +77,4 @@ a {
 .room-exit_button {
 
 }
+
