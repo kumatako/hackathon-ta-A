@@ -13,8 +13,6 @@ if (userName !== '') {
 
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('recieveMyNameEvent', function (userName) {
-
     $('#thread').prepend('<p>' + userName + '</p>');
-    //$('#thread').prepend('<p>' + member + '</p>');
 
 });

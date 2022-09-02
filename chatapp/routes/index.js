@@ -1,5 +1,6 @@
 'use strict';
 
+const { application } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -16,6 +17,8 @@ router.post('/room', function (request, response, next) {
     response.render('room', { userName: request.body.userName,icon:icon});
 
 });
+
+
 
 
 module.exports = router;
