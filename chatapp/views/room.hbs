@@ -27,7 +27,7 @@
                         align-items: center;
                         justify-content: flex-start;
                         padding: 0 10px;">
-                    <img src="animal_arupaka.png" 
+                    <img src="{{userIcon}}"
                         alt=""
                         style="width: 45px;
                             height: 45px;
@@ -40,8 +40,8 @@
                             font-size:large;">
                         <!-- ログインユーザ：さん -->{{userName}}
                         <br>
-                        <!-- 選択したアイコン：{{icon}} -->
                         <input id="userName" type="hidden" value={{userName}}>
+                        <input id="userIcon" type="hidden" value={{userIcon}}>
                     </div>
                     <div class="room-exit"
                         style="margin-left: 190px">

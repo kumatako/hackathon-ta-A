@@ -12,9 +12,9 @@ router.get('/', function (request, response, next) {
 // チャット画面の表示
 router.post('/room', function (request, response, next) {
     console.log('ユーザ名：' + request.body.userName);
-    const icon = request.body['index-icon-select'];
-    console.log('選択したアイコン：' + icon);
-    response.render('room', { userName: request.body.userName,icon:icon});
+    const userIcon = request.body['index-icon-select'];
+    console.log('選択したアイコン：' + userIcon);
+    response.render('room', { userName: request.body.userName,userIcon:userIcon});
 
 });
 
