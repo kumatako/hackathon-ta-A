@@ -4,6 +4,8 @@
 function publish() {
     // ユーザ名を取得
     const userName = $('#userName').val();
+    //アイコンを取得
+    const Icon = $('#userIcon').val();
     // 入力されたメッセージを取得
     let message = $('#message').val();
     //メッセージのスペースを除去
@@ -18,7 +20,7 @@ function publish() {
     //メッセージが空でないかの判別
     if (nokaigyoumessage !== "") {
         // sendMessageEvent
-        socket.emit('sendMessageEvent', message, userName);
+        socket.emit('sendMessageEvent', message, userName, Icon);
         $('#message').val('');
     }
 
@@ -31,13 +33,14 @@ function publish() {
 }
 
 // サーバから受信した投稿メッセージを画面上に表示する
-socket.on('receiveMessageEvent', function (message, userName, formatted) {
+socket.on('receiveMessageEvent', function (message, userName, formatted,Icon) {
 
     const myUserName = $('#userName').val();
+    const myIcon = $('#userIcon').val();
     if (myUserName === userName) {
-        $('#thread').prepend('<p>私の投稿：' + message + '<' + formatted + '>' + '</p>');
+        $('#thread').prepend('<p> <img src="' + myIcon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">私:&ensp;' + message + '<' + formatted + '>' + '</p>');
     } else {
-        $('#thread').prepend('<p>' + userName + 'さんの投稿：' + message + '<' + formatted + '>' + '</p>');
+        $('#thread').prepend('<p> <img src="' + Icon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">' + userName + ":&ensp;" + message + '<' + formatted + '>' + '</p>');
     }
 });
 

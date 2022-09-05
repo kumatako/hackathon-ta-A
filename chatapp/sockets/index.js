@@ -1,9 +1,12 @@
 'use strict';
 
+
+
 module.exports = function (server) {
 
     const socketIo = require('socket.io')(server, { wsEngine: 'ws' });
     const io = socketIo.listen(server);
+
 
     io.sockets.on('connection', function (socket) {
         // 投稿モジュールの呼出
@@ -14,5 +17,9 @@ module.exports = function (server) {
 
         // 退室モジュールの呼出
         require('./exit')(socket);
+
+        //スタンプモジュールの呼出
+        require('./stamp')(socket, io);
+
     });
 };
