@@ -4,6 +4,7 @@
 function publish() {
     // ユーザ名を取得
     const userName = $('#userName').val();
+    //アイコンを取得
     const Icon = $('#userIcon').val();
     // 入力されたメッセージを取得
     let message = $('#message').val();
