@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(socket, io) {
-    socket.on('sendimage', function(imagedata) {
-        io.sockets.emit('receiveimage', imagedata);
+    socket.on('sendStampEvent', function(imagedata) {
+        io.sockets.emit('receiveStampEvent', imagedata);
     });
 };
