@@ -34,7 +34,9 @@ function publish() {
 socket.on('receiveMessageEvent', function (message, userName, formatted) {
 
     const myUserName = $('#userName').val();
+    const Icon = $('#userIcon').val();
     if (myUserName === userName) {
+        $('#thread').prepend('<p> <img src="' + Icon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">私:' + message + '<' + formatted + '>' + '</p>');
         $('#thread').prepend('<p>私の投稿：' + message + '<' + formatted + '>' + '</p>');
     } else {
         $('#thread').prepend('<p>' + userName + 'さんの投稿：' + message + '<' + formatted + '>' + '</p>');
