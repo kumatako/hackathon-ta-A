@@ -269,7 +269,7 @@
         content: '';
         position: absolute;
         right: 0;
-        top: 0;
+        top: 50%;
         width: 0;
         height: 0;
         border: 20px solid transparent;
@@ -280,19 +280,19 @@
         margin-right: -13px;
     }
 
-    .othermessage .message::after{
+    .othersmessage .message::after{
         content: '';
         position: absolute;
-        right: 0;
-        top: 0;
+        left: 0;
+        top: 50%;
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-left-color: #dcf8c6;
-        border-right: 0;
+        border-right-color: #ddd;
+        border-left: 0;
         border-top: 0;
         margin-top: 0px;
-        margin-right: -13px;
+        margin-left: -13px;
     }
 
     .mymessage .message{
@@ -305,13 +305,13 @@
         border-radius: 10px;
     }
 
-    .othermessage .message{
+    .othersmessage .message{
         position:relative;
         left:0px;
         text-align:left;
         padding: 8px;
         max-width: 65%;
-        background-color:#dcf8c6;
+        background:#ddd;
         border-radius: 10px;
     }
 
@@ -335,6 +335,7 @@
         display: flex;
         flex-flow: row;
         margin-bottom: 10px;
+        justify-content: flex-end;
     }
     .othersmessage{
         display: flex;
