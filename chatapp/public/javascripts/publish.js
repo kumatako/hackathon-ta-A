@@ -38,9 +38,9 @@ socket.on('receiveMessageEvent', function (message, userName, formatted,Icon) {
     const myUserName = $('#userName').val();
     const myIcon = $('#userIcon').val();
     if (myUserName === userName && myIcon == Icon) {
-        $('#thread').prepend('<p> <img src="' + myIcon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">私:&ensp;' + message +  "&ensp;" + '<small><' + formatted + '></small>' + '</p>');
+        $('#thread').prepend('<div class="mymessage"><div class="message">'+message+' &ensp;<small><'+formatted+'></small>&ensp;</div><div class="name-and-icon"><img class="icon" src="'+myIcon+'">私</div></div>');
     } else {
-        $('#thread').prepend('<p> <img src="' + Icon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">' + userName + "&ensp;" + message +  ":&ensp;" + '<small><' + formatted + '></small>' + '</p>');
+        $('#thread').prepend('<div class="othersmessage"><div class="name-and-icon"><img class="icon" src="'+Icon+'">'+userName+'</div><div class="message">'+message+' &ensp;<small><'+formatted+'></small>&ensp;</div></div>');
     }
 });
 
