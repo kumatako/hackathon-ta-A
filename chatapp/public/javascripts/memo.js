@@ -20,7 +20,7 @@ function memo() {
     //メッセージが空でないか判別
     if (nokaigyoumessage !== ""){
         // メモの内容を表示
-        $('#thread').prepend('<p> <img src="' + myIcon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">私のメモ:&ensp;' + message +'</p>');
+        $('#thread').prepend('<p class="memo"> <img src="' + myIcon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">メモ:&ensp;' + message +'</p>');
         // テキストボックスの初期化
         $('#message').val('');
     }
