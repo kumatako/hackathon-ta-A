@@ -26,10 +26,10 @@ socket.on('receiveStampEvent', function(stamp, userName, Icon, formatted) {
     const myuserName = $('#userName').val();
     const myIcon = $('#userIcon').val();
     if (myuserName == userName && myIcon == Icon) {
-        $('#thread').prepend('<p> <img src="' + myIcon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">私:&ensp;' + '<img src="' + stamp + '"alt="happy" style="width: 160px; height: 160px;border-radius: 40px;margin-right: 20px;">' +  "&ensp;" + '<small><' + formatted + '></small>' +  '</p>');
+        $('#thread').prepend('<div class="mymessage">&ensp;<small><'+formatted+'></small>&ensp;<img class="stamp" src="' + stamp + '" style="width: 160px; height: 160px;border-radius: 40px;margin-right: 20px;"><div class="name-and-icon"><img class="icon" src="'+myIcon+'">私</div></div>');
     }
     else {
-        $('#thread').prepend('<p> <img src="' + Icon + '"alt=""style="width: 45px;height: 45px;border-radius: 22.5px;border: 1px solid lightgray;margin-right: 10px;">' + userName + ":&ensp;" + '<img src="' + stamp + '"alt="happy" style="width: 160px; height: 160px;border-radius: 40px;margin-right: 20px;">' +  "&ensp;" + '<small><' + formatted + '></small>' + '</p>');
+        $('#thread').prepend('<div class="othersmessage"><div class="name-and-icon"><img class="icon" src="'+Icon+'">'+userName+'</div><img class="stamp" src="' + stamp + '" style="width: 160px; height: 160px;border-radius: 40px;margin-right: 20px;">&ensp;<small><'+formatted+'></small>&ensp;</div>');
     }
     
 });
