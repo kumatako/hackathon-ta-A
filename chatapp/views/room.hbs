@@ -14,10 +14,13 @@
             box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
             display: flex;">
         <div class="leftside" 
+            id="leftside"
             style="position:relative;
                 flex: 30%;
                 background:#fff;
-                border-right: rgba(0,0,0,0.1);">
+                display: none;
+                border-right: rgba(0,0,0,0.1);
+                transition: 0.5s">
             <div class="header"
                 style="position:relative;
                     width: 100%;
@@ -173,9 +176,31 @@
                     font-weight: 1000;
                     font-family: Arial;
                     background:#ededed;">
-                <h3 style="margin-bottom: 0px;"><span style="background-color: green;
-                                                            border-radius: 10px;
-                                                            padding: 5px;">Chat</span>Room</h3>
+                <button id="label"
+                        style="margin:0px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            position:absolute;
+                            top: 10px;
+                            left: 5px;
+                            z-index: 1;
+                        ">
+                    <ion-icon name="menu-outline"
+                            style="width: 40px;
+                                height: 40px;
+                                position:relative;
+                                top:-2px;
+                                left:-5px;
+                                cursor:pointer;">
+                    </ion-icon>
+                </button>
+                <h3 style="margin-bottom: 0px;
+                        margin-left: 30px;">
+                        <span style="background-color: green;
+                                    border-radius: 10px;
+                                    padding: 5px;">Chat</span>Room
+                </h3>
             </div>
             <div class="room-thread"
                 style="height: calc(100% - 130px);
@@ -264,6 +289,19 @@
 <script src="/javascripts/exit.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    const menu_icon = document.getElementById('label');
+    const leftside = document.getElementById('leftside');
+
+    menu_icon.addEventListener(`click`, () => {
+        if(leftside.style.display=="none"){
+            leftside.style.display="block";
+        } else if(leftside.style.display=="block") {
+            leftside.style.display="none";
+        }
+    })
+</script>
 
 <style>
     .mymessage .message::after{
