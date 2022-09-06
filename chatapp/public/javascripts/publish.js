@@ -38,9 +38,9 @@ socket.on('receiveMessageEvent', function (message, userName, formatted,Icon) {
     const myUserName = $('#userName').val();
     const myIcon = $('#userIcon').val();
     if (myUserName === userName && myIcon == Icon) {
-        $('#thread').prepend('<div class="mymessage"><div class="message">'+message+' &ensp;<small><'+formatted+'></small>&ensp;</div><div class="name-and-icon"><img class="icon" src="'+myIcon+'">私</div></div>');
+        $('#thread').prepend('<div class="mymessage"> &ensp;<small><'+formatted+'></small>&ensp;<div class="message">'+message+'</div><div class="name-and-icon"><img class="icon" src="'+myIcon+'">私</div></div>');
     } else {
-        $('#thread').prepend('<div class="othersmessage"><div class="name-and-icon"><img class="icon" src="'+Icon+'">'+userName+'</div><div class="message">'+message+' &ensp;<small><'+formatted+'></small>&ensp;</div></div>');
+        $('#thread').prepend('<div class="othersmessage"><div class="name-and-icon"><img class="icon" src="'+Icon+'">'+userName+'</div><div class="message">'+message+'</div>&ensp;<small><'+formatted+'></small>&ensp;</div>');
     }
 });
 
