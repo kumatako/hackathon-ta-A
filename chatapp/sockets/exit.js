@@ -9,7 +9,7 @@ module.exports = function (socket) {
         //時刻の取得
         require('date-utils');
         let dt = new Date();
-        let formatted = dt.toFormat("YYYY/MM/DD HH24時MI分SS秒");
-        socket.broadcast.emit('recieveExitEvent', data + 'さんが退出しました。' + '<' + formatted + '>');
+        let formatted = dt.toFormat("HH24:MI");
+        socket.broadcast.emit('recieveExitEvent', data + 'さんが退出しました。' +  ":&ensp;" + '<' + formatted + '>');
     });
 };
