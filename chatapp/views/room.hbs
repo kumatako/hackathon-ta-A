@@ -20,7 +20,7 @@
                 background:#fff;
                 display: none;
                 border-right: rgba(0,0,0,0.1);
-                transition: 0.5s">
+                transition: 2s">
             <div class="header"
                 style="position:relative;
                     width: 100%;
@@ -159,7 +159,7 @@
             </div>
         </div>
         
-        <div class="rightside"
+        <div class="center"
             style="position: relative;
                 flex: 70%;
                 background: #fff;
@@ -185,6 +185,7 @@
                             top: 10px;
                             left: 5px;
                             z-index: 1;
+                            outline: none;
                         ">
                     <ion-icon name="menu-outline"
                             style="width: 40px;
@@ -201,6 +202,24 @@
                                     border-radius: 10px;
                                     padding: 5px;">Chat</span>Room
                 </h3>
+                <button id="catlabel"
+                        style="margin:0px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            position:absolute;
+                            top: 10px;
+                            right: 5px;
+                            z-index: 1;
+                            outline: none;">
+                    <ion-icon name="logo-octocat"
+                            style="width: 40px;
+                                height: 40px;
+                                position:relative;
+                                top:-2px;
+                                left:-5px;
+                                cursor:pointer;">
+                    </ion-icon>
             </div>
             <div class="room-thread"
                 style="height: calc(100% - 130px);
@@ -254,29 +273,80 @@
                                         border: none;
                                         border-radius: 10px;
                                         margin-left: 10px;">
-
-                        <button type = "button"
-                        onclick = "stamp();">
-                        <img src = "stamp_ukareru_woman.png"
-                                alt="嬉しい"
-                                style="width: 40px;
-                                        height: 40px;
-                                        border-radius: 20px;
-                                        background: white;
-                                        margin-right: 20px;"/></button>
-                        <button type = "button"
-                        onclick = "stampangry();">
-                        <img src = "stamp_okoru_man.png"
-                                alt="怒り"
-                                style="width: 40px;
-                                        height: 40px;
-                                        border-radius: 20px;
-                                        background: white;
-                                        margin-right: 20px;"/></button>
-                        </div>                
+                              
+                        </div>
                     </div>
                 </div>
             </form>
+            <div class="rightside"
+                id="rightside"
+                style="position: relative;
+                    flex: 30%;
+                    height: 100%;
+                    background-color:#fff;
+                    display: none;
+                    border-left: 1px solid rgba(0,0,0,0.2);">
+                    <div class="header"
+                        style="height: 60px;
+                            width: 100%;
+                            background:#ededed;
+                            text-align:center;">
+                    <h3 style="line-height: 60px;">
+                        STAMPS
+                    </h3>
+                    </div>
+                    <div class="stamps"
+                        style="display: flex;
+                                flex-wrap:wrap;
+                                justify-content:space-between;
+                                padding: 10px;
+                                ">
+                        <button type = "button"
+                                onclick = "stamp();"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    border: none;
+                                    outline: none;
+                                    margin-bottom: 10px;
+                                    border-radius: 40px;
+                                    background:#fff;">
+                            <img src = "stamp_ukareru_woman.png"
+                                    alt="嬉しい"
+                                    style="width: 80px;
+                                            height: 80px;
+                                            position:relative;
+                                            left: -7px;
+                                            bottom: 4px;
+                                            border-radius: 40px;
+                                            background: white;
+                                            margin-right: 20px;"/>
+                        </button>
+                        <button type = "button"
+                                onclick = "stampangry();"
+                                style="
+                                        width: 80px;
+                                        height: 80px;
+                                        border:none;
+                                        outline: none;
+                                        margin-bottom: 10px;
+                                        border-radius: 40px;
+                                        background:#fff;">
+                        <img src = "stamp_okoru_man.png"
+                                alt="怒り"
+                                style="width: 80px;
+                                        height: 80px;
+                                        position:relative;
+                                        left: -7px;
+                                        bottom: 4px;
+                                        border-radius: 40px;
+                                        background: white;
+                                        margin-right: 20px;"/>
+                        </button>
+                        
+                    </div>              
+        </div>
+        
         </div>
     </div>
 </div>
@@ -293,6 +363,8 @@
 <script>
     const menu_icon = document.getElementById('label');
     const leftside = document.getElementById('leftside');
+    const stamp_icon = document.getElementById('catlabel');
+    const rightside = document.getElementById('rightside');
 
     menu_icon.addEventListener(`click`, () => {
         if(leftside.style.display=="none"){
@@ -301,6 +373,15 @@
             leftside.style.display="none";
         }
     })
+
+    stamp_icon.addEventListener('click', () => {
+        if(rightside.style.display=="none"){
+            rightside.style.display="block";
+        } else if(rightside.style.display=="block") {
+            rightside.style.display="none";
+        }
+    })
+
 </script>
 
 <style>
@@ -388,5 +469,10 @@
         background-color: #d6f3ff;
         border-radius: 10px;
     }
+
+    .stamp:hover ~ .stamps {
+        display: block;
+    }
+
 
 </style>
