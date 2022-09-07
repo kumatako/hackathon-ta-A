@@ -18,7 +18,75 @@ function stampangry() {
 
     return false;
 }
+function stamppien() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_pien_woman.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
 
+    return false;
+}
+function stampyorosiku() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_yoroshiku.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}
+function stamptoutoi() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_toutoi.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}
+function stampthankyou() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_thank_you.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}function stamptasukaru() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_tasukarimashita.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}function stamphapiba() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_happy_birthday_people.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}function stampkansou() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_kojinno_kansoudesu.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}
+function stampyorokobi() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_yorokobi_man.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}
 
 //サーバーから受信したスタンプを画面上に表示する
 socket.on('receiveStampEvent', function(stamp, userName, Icon, formatted) {
