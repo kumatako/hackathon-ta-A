@@ -233,7 +233,7 @@
                     style="width: 100%;
                         position:absolute;
                         bottom: 0px;
-                        height: 70px;
+                        min-height: 70px;
                         background: #f0f0f0;
                         display:flex;
                         justify-content:center;
@@ -245,19 +245,23 @@
                         justify-content:space-between;
                         width: 100%;">
                         <textarea id="message" 
-                            rows="1" 
-                            class="room-message_textarea" 
-                            placeholder="投稿文を入力してください(@相手のユーザ名@でDMを送れます)"
-                            style="border-radius: 20px;
-                                width: 80%;
-                                margin-left: 20px;
-                                margin-top: 4px;
-                                margin-bottom: 4px;
-                                padding: 10px 20px;
-                                border: none;
-                                resize: none;"></textarea>
+                                class="room-message_textarea" 
+                                placeholder="投稿文を入力してください(@相手のユーザ名@でDMを送れます)"
+                                style="border-radius: 20px;
+                                    width: 80%;
+                                    height: 45px;
+                                    max-height: 300px;
+                                    font-size: 18px;
+                                    margin-left: 20px;
+                                    margin-top: 4px;
+                                    margin-bottom: 4px;
+                                    padding: 10px 20px;
+                                    border: none;
+                                    outline: none;
+                                    resize: none;"></textarea>
                         <input type="button" 
                             value="投稿" 
+                            id="send"
                             class="common-button room-publish_button btn btn-primary" 
                             onclick="publish();"
                             style="height: 40px;
@@ -266,7 +270,8 @@
                                     border-radius: 10px;">
 
                         <input type="button" 
-                                value="メモ" 
+                                value="メモ"
+                                id="doc" 
                                 class="common-button room-memo_button btn btn-primary" 
                                 onclick="memo();"
                                 style="height: 40px;
@@ -365,6 +370,11 @@
     const leftside = document.getElementById('leftside');
     const stamp_icon = document.getElementById('catlabel');
     const rightside = document.getElementById('rightside');
+    const textarea = document.querySelector("textarea");
+    const sendButton = document.getElementById('send');
+    const memoButton = document.getElementById('doc');
+
+    
 
     menu_icon.addEventListener(`click`, () => {
         if(leftside.style.display=="none"){
@@ -382,6 +392,21 @@
         }
     })
 
+    textarea.addEventListener('keyup', (e) => {
+        textarea.style.height = `49px`; 
+        const scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`; 
+    });
+
+    sendButton.addEventListener('click', (e) => {
+        textarea.style.height = `49px`;
+    })
+
+    memoButton.addEventListener('click', (e) => {
+        textarea.style.height = `49px`;
+    })
+ 
+    
 </script>
 
 <style>
@@ -472,6 +497,10 @@
 
     .stamp:hover ~ .stamps {
         display: block;
+    }
+
+    textarea::-webkit-scrollbar{
+        width: 0px;
     }
 
 
