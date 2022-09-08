@@ -11,3 +11,11 @@ socket.on('recievememberEvent', function(myuserName, keyuserName) {
     }
 
 });
+socket.on('recievenowmemberEvent', function(userName) {
+    const keyuserName = userName;
+    const myuserName = $('#userName').val();
+    if (myuserName !== userName) {
+        socket.emit('sendmemberEvent', myuserName, keyuserName);
+    }
+
+})

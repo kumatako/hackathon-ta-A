@@ -9,4 +9,10 @@ module.exports = function (socket, io) {
         io.sockets.emit('recievememberEvent', myuserName, keyuserName );
 
     });
+    socket.on('sendnowmemberEvent', function(userName) {
+        if (!userName) {
+            return
+        }
+        io.sockets.emit('recievenowmemberEvent', userName);
+    });
 };

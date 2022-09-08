@@ -36,9 +36,16 @@ function publish() {
     // 投稿内容を送信
     //メッセージが空でないかの判別
     if (nokaigyoumessage !== "") {
-        // sendMessageEvent
-        socket.emit('sendMessageEvent', message, userName, Icon, toName);
-        $('#message').val('');
+        if ( nokaigyoumessage === '/member') {
+            socket.emit('sendnowmemberEvent', userName);
+            $('#message').val('');
+
+        }
+        else {
+            // sendMessageEvent
+            socket.emit('sendMessageEvent', message, userName, Icon, toName);
+            $('#message').val('');
+        }
     }
 
     else {
