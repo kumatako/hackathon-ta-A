@@ -257,7 +257,7 @@
                                 placeholder="投稿文を入力してください(文頭に@相手のユーザ名@でDMを送信、/memberでメンバー確認)"
                                 style="border-radius: 20px;
                                     width: 80%;
-                                    height: 45px;
+                                    height: 66px;
                                     max-height: 200px;
                                     font-size: 18px;
                                     margin-left: 20px;
@@ -270,10 +270,12 @@
                         <input type="button" 
                             value="投稿" 
                             id="send"
-                            class="common-button room-publish_button btn btn-primary" 
                             onclick="publish();"
                             style="height: 40px;
+                                    width: 58px;
+                                    color: #fff;
                                     border: none;
+                                    outline: none;
                                     margin-left: 10px;
                                     border-radius: 10px;
                                     background: none;
@@ -284,10 +286,12 @@
                         <input type="button" 
                                 value="メモ"
                                 id="doc" 
-                                class="common-button room-memo_button btn btn-primary" 
                                 onclick="memo();"
                                 style="height: 40px;
+                                        width: 58px;
+                                        color: #fff;
                                         border: none;
+                                        outline: none;
                                         border-radius: 10px;
                                         margin-left: 10px;
                                         background: none;
@@ -620,17 +624,17 @@
     })
 
     textarea.addEventListener('keyup', (e) => {
-        textarea.style.height = `49px`; 
+        textarea.style.height = `66px`; 
         const scHeight = e.target.scrollHeight;
         textarea.style.height = `${scHeight}px`; 
     });
 
     sendButton.addEventListener('click', (e) => {
-        textarea.style.height = `49px`;
+        textarea.style.height = `66px`;
     })
 
     memoButton.addEventListener('click', (e) => {
-        textarea.style.height = `49px`;
+        textarea.style.height = `66px`;
     })
  
     
