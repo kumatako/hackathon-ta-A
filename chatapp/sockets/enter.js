@@ -11,6 +11,7 @@ module.exports = function (socket, io) {
         let dt = new Date();
         let formatted = dt.toFormat("HH24:MI");
 
-        socket.broadcast.emit('recieveMyNameEvent', userName + 'さんが入室しました。' +  ":&ensp;"+ '<' + formatted + '>');
+        io.sockets.emit('recieveMyNameEvent', userName , formatted);
     });
+
 };

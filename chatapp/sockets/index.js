@@ -21,5 +21,8 @@ module.exports = function (server) {
         //スタンプモジュールの呼出
         require('./stamp')(socket, io);
 
+        //メンバーモジュールの呼出
+        require('./member')(socket, io);
+
     });
 };
