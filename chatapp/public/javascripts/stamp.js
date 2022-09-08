@@ -87,7 +87,23 @@ function stampyorokobi() {
 
     return false;
 }
+function stampkuyasi() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_kuyashii_woman.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
 
+    return false;
+}function stampmoetuki() {
+    // ユーザ名を取得
+    const userName = $('#userName').val();
+    const Icon = $('#userIcon').val();
+    let stamp = "stamp_moetsuki_man.png";
+    socket.emit('sendStampEvent', stamp, userName, Icon);
+
+    return false;
+}
 //サーバーから受信したスタンプを画面上に表示する
 socket.on('receiveStampEvent', function(stamp, userName, Icon, formatted) {
     //自分のユーザ名を取得

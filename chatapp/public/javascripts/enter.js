@@ -14,5 +14,6 @@ if (userName !== '') {
 // サーバから受信した入室メッセージを画面上に表示する
 socket.on('recieveMyNameEvent', function (userName) {
     $('#thread').prepend('<p>' + userName + '</p>');
+    $('#thread').prepend('<img class="stamp" src="stamp_nyusitu_man.png" style="width: 160px; height: 160px;border-radius: 40px;margin-right: 20px;">');
 
 });
