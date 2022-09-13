@@ -56,8 +56,8 @@
                         onclick="exit();"
                         style="background: none;
                             border: 2px solid #e74b3c;"
-                            onmouseout="this.style.background='none'"
-                            onmouseover="this.style.background='#e74b3c'">
+                        onmouseout="this.style.background='none'"
+                        onmouseover="this.style.background='#e74b3c'">
                 </div>
             </div>
             <div class="search-bar"
@@ -279,7 +279,8 @@
                                     margin-left: 10px;
                                     border-radius: 10px;
                                     background: none;
-                                    border: 2px solid #2c3d50;"
+                                    border: 2px solid #2c3d50;
+                                    transition: 0.2s"
                             onmouseout="this.style.background='none'"
                             onmouseover="this.style.background='#2c3d50'">
 
@@ -295,7 +296,8 @@
                                         border-radius: 10px;
                                         margin-left: 10px;
                                         background: none;
-                                        border: 2px solid #2c3d50;"
+                                        border: 2px solid #2c3d50;
+                                        transition: 0.2s"
                                 onmouseout="this.style.background='none'"
                                 onmouseover="this.style.background='#2c3d50'">
                               
@@ -732,6 +734,31 @@
 
     textarea::-webkit-scrollbar{
         width: 0px;
+    }
+
+    .imgbox {
+        position: relative;
+        height: 45px;
+        width: 45px;
+        border-radius: 22.5px;
+    }
+
+    .cover {
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px;
+        overflow: hidden;
+        border: 1px solid lightgray;
+    }
+
+    .name {
+        margin-left: 10px;
+        height: 40px;
+    }
+
+    .name p {
+        font-weight: 1000;
+        line-height: 40px;
     }
 
 
